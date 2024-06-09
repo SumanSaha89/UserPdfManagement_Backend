@@ -5,7 +5,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
    // Enable CORS
   app.enableCors({
-  origin: 'http://localhost:4200', // Angular development server
+  origin: process.env.CLIENT_URL, // Angular development server
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
   credentials: true,
   });
